@@ -7,10 +7,14 @@ libraries:
 - beautifulsoup: very useful to extract information from html
 """
 from indeed import get_jobs as get_indeed_jobs
+from stackoverflow import get_jobs as get_so_jobs
+# Todo list: linkedin jobs webscrapper
 
 indeed_jobs = get_indeed_jobs()
+stackoverflow_jobs = get_so_jobs()
+jobs = indeed_jobs + stackoverflow_jobs
 
-print(indeed_jobs)
+print(jobs)
 
 
 

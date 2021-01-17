@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 LIMIT = 10
 LOCATION = "PORTLAND"
 RADIUS = "50"
-QUALITY = "python"
+QUALITY = "computer+science"
 URL = f"https://www.indeed.com/jobs?q={QUALITY}&l={LOCATION}&radius={50}&limit={LIMIT}"
 
 
@@ -48,7 +48,7 @@ def extract_job(html):
 def extract_jobs(last_page):
     jobs = []
     for page in range(last_page):
-        print(f"Scrapping page {page}")
+        print(f"Scrapping indeed page {page}")
         result = requests.get(f"{URL}&start={page*LIMIT}")
         soup = BeautifulSoup(result.text, "html.parser")
         results = soup.find_all("div", {"class": "jobsearch-SerpJobCard"})
