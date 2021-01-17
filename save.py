@@ -7,4 +7,3 @@ def save_to_file(jobs):
     writer.writerow([key for key in jobs[0].keys()])    # title, company, location, link
     for job in jobs:
         writer.writerow(list(job.values()))
-    return
