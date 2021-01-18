@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, send_file
-from scrapper import get_jobs
+from scraper import get_jobs
 from save import save_to_file
 
-app = Flask("SuperScrapper")
+app = Flask("SuperScraper")
 
 # database to store jobs
 # should be outside the route
