@@ -1,15 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-LIMIT = 10
-LOCATION = "PORTLAND"
-RADIUS = "50"
-QUALITY = "computer+science"
-URL = f"https://www.indeed.com/jobs?q={QUALITY}&l={LOCATION}&radius={50}&limit={LIMIT}"
-
-
-def get_last_page():
-    result = requests.get(URL)
+def get_last_page(url):
+    result = requests.get(url)
     soup = BeautifulSoup(result.text, "html.parser")
     pagination = soup.find("div", {"class": "pagination"})
     links = pagination.find_all('a')    # find all the anchor
@@ -45,11 +38,11 @@ def extract_job(html):
     }
 
 
-def extract_jobs(last_page):
+def extract_jobs(last_page, url, limit):
     jobs = []
     for page in range(last_page):
         print(f"Scrapping indeed page {page}")
-        result = requests.get(f"{URL}&start={page*LIMIT}")
+        result = requests.get(f"{url}&start={page*limit}")
         soup = BeautifulSoup(result.text, "html.parser")
         results = soup.find_all("div", {"class": "jobsearch-SerpJobCard"})
         for result in results:
@@ -58,8 +51,13 @@ def extract_jobs(last_page):
     return jobs
 
 
-def get_jobs():
-    last_page = get_last_page()
-    jobs = extract_jobs(last_page)
+def get_jobs(word):
+    limit = 10
+    LOCATION = "PORTLAND"
+    RADIUS = "50"
+    QUALITY = word
+    url = f"https://www.indeed.com/jobs?q={QUALITY}&l={LOCATION}&radius={50}&limit={limit}"
+    last_page = get_last_page(url)
+    jobs = extract_jobs(last_page, url, limit)
     return jobs
 
