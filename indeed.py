@@ -27,7 +27,6 @@ def extract_job(html):
         if company.find("a") is not None:
             company = company_anchor.contents[0].strip()
         else:
-            print(company.contents)
             company = company.contents[0].strip()
     else:
         company = None
@@ -62,7 +61,7 @@ def get_jobs(word):
     LOCATION = "PORTLAND"
     RADIUS = "50"
     QUALITY = word
-    url = f"https://www.indeed.com/jobs?q={QUALITY}&l={LOCATION}&radius={50}&limit={limit}"
+    url = f"https://www.indeed.com/jobs?q={QUALITY}&l={LOCATION}&radius={RADIUS}&limit={limit}"
     last_page = get_last_page(url)
     jobs = extract_jobs(last_page, url, limit)
     return jobs
