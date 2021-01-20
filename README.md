@@ -1,9 +1,9 @@
 # Job Search Dashboard 
 
-<h3>Link to the Job Search Dashboard</h3>
+<h4>Link to the Job Search Dashboard</h4>
 https://jobs-dashboard.herokuapp.com/
 
-<h3>What does it do?</h3>
+<h4>What does it do?</h4>
 
 - This is the web scrapping program that scrapes search results from the websites such as indeed.com and stackoverflow. 
 - Currently, the program is searching only the jobs in *Portland, OR* only.  
@@ -15,7 +15,7 @@ https://jobs-dashboard.herokuapp.com/
   - deployed on Heroku 
 
 --------------------------------------------------------------------
-<h3>Extended Goals..</h3> 
+<h4>Extended goals</h4> 
 
 - Prettify UI (tailwind css)
 - Web scrapping log-in required service (e.g. linkedin)
