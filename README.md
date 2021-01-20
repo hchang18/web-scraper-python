@@ -12,6 +12,7 @@ https://jobs-dashboard.herokuapp.com/
   - Python
   - requests
   - BeautifulSoup
+  - Flask backend
   - deployed on Heroku 
 
 --------------------------------------------------------------------
