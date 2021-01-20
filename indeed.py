@@ -1,15 +1,20 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def get_last_page(url):
     result = requests.get(url)
     soup = BeautifulSoup(result.text, "html.parser")
     pagination = soup.find("div", {"class": "pagination"})
-    links = pagination.find_all('a')    # find all the anchor
-    pages = []
-    for link in links[:-1]:
-        pages.append(int(link.find("span").string))
-    max_page = pages[-1]
+    # when there is no search result
+    if pagination:
+        links = pagination.find_all('a')    # find all the anchor
+        pages = []
+        for link in links[:-1]:
+            pages.append(int(link.find("span").string))
+        max_page = pages[-1]
+    else:
+        max_page = 1
     return max_page
 
 
@@ -20,9 +25,10 @@ def extract_job(html):
     # tip: some company has link ("a"), some company does not..
     if company:
         if company.find("a") is not None:
-            company = company_anchor.string.strip()
+            company = company_anchor.contents[0].strip()
         else:
-            company = company.string.strip()
+            print(company.contents)
+            company = company.contents[0].strip()
     else:
         company = None
     # tip: when there are None data in place where location should be
