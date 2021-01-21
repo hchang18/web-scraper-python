@@ -18,7 +18,6 @@ https://jobs-dashboard.herokuapp.com/
 --------------------------------------------------------------------
 <h4>Extended goals</h4> 
 
-- Prettify UI (tailwind css)
 - Web scrapping log-in required service (e.g. linkedin)
 - Expand the search region 
 - Telegram bot that notifies new jobs
