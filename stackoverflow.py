@@ -35,7 +35,7 @@ def extract_job(html):
         'title': title,
         'company': company,
         'location': location,
-        'link': f"https://stackoverflow.com/jobs{job_id}"
+        'link': f"https://stackoverflow.com/jobs/{job_id}"
     }
 
 
