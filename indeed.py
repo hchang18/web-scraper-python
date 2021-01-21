@@ -58,10 +58,10 @@ def extract_jobs(last_page, url, limit):
 
 def get_jobs(word):
     limit = 10
-    LOCATION = "PORTLAND"
-    RADIUS = "50"
-    QUALITY = word
-    url = f"https://www.indeed.com/jobs?q={QUALITY}&l={LOCATION}&radius={RADIUS}&limit={limit}"
+    location = "PORTLAND"
+    radius = "50"
+    quality = word
+    url = f"https://www.indeed.com/jobs?q={quality}&l={location}&radius={radius}&limit={limit}"
     last_page = get_last_page(url)
     jobs = extract_jobs(last_page, url, limit)
     return jobs

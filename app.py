@@ -8,6 +8,7 @@ app = Flask(__name__)
 # should be outside the route
 db = {}
 
+
 @app.route("/")
 def home():
     return render_template("search.html")
@@ -66,4 +67,4 @@ def export():
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for
     # multiple user access support
-    app.run(threaded=True, port=5000)
+    app.run(threaded=True, port=5000, debug=True)
