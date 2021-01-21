@@ -25,7 +25,7 @@ def report():
             jobs = existingJobs
         else:
             jobs = get_jobs(word)
-            db[word] = jobs
+            # db[word] = jobs
     else:
         # we don't want anyone to access /report without any word
         # better redirect it to home
