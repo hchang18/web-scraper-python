@@ -1,7 +1,7 @@
 # Job Search Dashboard 
 
 <h4>Link to the Job Search Dashboard</h4>
-https://jobs-dashboard.herokuapp.com/ (currently disconnected to fix errors)
+https://jobs-dashboard.herokuapp.com/
 
 <h4>What does it do?</h4>
 
