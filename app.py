@@ -25,7 +25,7 @@ def report():
             jobs = existingJobs
         else:
             jobs = get_jobs(word)
-            # db[word] = jobs
+            db[word] = jobs
     else:
         # we don't want anyone to access /report without any word
         # better redirect it to home
@@ -39,17 +39,22 @@ def report():
 @app.route("/export")
 def export():
     try:
+        print("Download it...")
         word = request.args.get('word')
         if not word:
             raise Exception()
         word = word.lower()
+        print("word: ", word)
         jobs = db.get(word)
+        print("Job: ", jobs)
         if not jobs:
             raise Exception()
         save_to_file(jobs)
+        print("saved the file...")
         return send_file("jobs.csv")
     except:
         # consequence of an error
+        print("There is an error downloading")
         return redirect("/")
 
 

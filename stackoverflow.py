@@ -53,11 +53,11 @@ def extract_jobs(last_page, url):
 
 
 def get_jobs(word):
-    QUALITY = word
-    LOCATION = "PORTLAND"
-    RADIUS = "20"
-    REMOTE = "false"  # if you want to find remote jobs, append "&r=true" at the end
-    url = f"https://stackoverflow.com/jobs?q={QUALITY}&l={LOCATION}&d={RADIUS}"
+    quality = word
+    location = "PORTLAND"
+    radius = "20"
+    remote = "false"  # if you want to find remote jobs, append "&r=true" at the end
+    url = f"https://stackoverflow.com/jobs?q={quality}&l={location}&d={radius}"
     last_page = get_last_page(url)
     jobs = extract_jobs(last_page, url)
     return jobs
