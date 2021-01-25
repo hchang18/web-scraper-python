@@ -1,7 +1,7 @@
 # Job Search Dashboard 
 
-<h4>Link to the Job Search Dashboard</h4>
-https://jobs-dashboard.herokuapp.com/
+<h4>How to run the program</h4>
+git clone the repo and run ```python app.py``` in terminal
 
 <h4>What does it do?</h4>
 
