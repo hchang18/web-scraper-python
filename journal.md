@@ -15,3 +15,7 @@
 
 - Fixed the problem that job scrapper does not work on web-server by **deactivating threaded option** in main function (app.py) 
 - Check again to see if it continues to work okay  
+
+**01-24-2021**
+- The problem happened again last night
+- Tried this morning again and it worked fine.. suspect that the problem relates to restarting (or awaking) of app 
