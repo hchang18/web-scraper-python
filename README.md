@@ -13,7 +13,6 @@ git clone the repo and run `python app.py` in terminal
   - requests
   - BeautifulSoup
   - Flask backend
-  - deployed on Heroku 
 
 --------------------------------------------------------------------
 <h4>Extended goals</h4> 
