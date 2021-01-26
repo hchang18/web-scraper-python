@@ -61,7 +61,7 @@ def get_jobs(word):
     location = "PORTLAND"
     radius = "50"
     quality = word
-    url = f"https://www.indeed.com/jobs?q={quality}&l={location}&radius={radius}&limit={limit}"
+    url = f"https://www.indeed.com/jobs?q={quality}&l={location}&radius={radius}&limit={limit}&sort=date"
     last_page = get_last_page(url)
     jobs = extract_jobs(last_page, url, limit)
     return jobs
